@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>America Imports - Inicio</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="/imgs/logos/logo-2.png" alt="logo">
+        </div>
+        <div class="login">
+            <a href="pages/login/login.html">Login</a>
+            <a href="pages/cadastro/cadastro.html">Cadastro</a>
+        </div>
+    </header>
+    <main>
+        <section id="main">
+            <h1>Seu jogo, seu estilo.</h1>
+        </section>
+
+        <section id="first">
+            <div class="title">
+                <h1>Regatas de Basquete</h1>
+            </div>
+            <div class="gallery">
+                <% camisas.forEach(camisa=> { %>
+                    <% if (camisa.tipo==='Regatas Basquete' ) { %>
+                        <div class="photo">
+                            <a href="./camisa/<%= camisa.id %>">
+                                <img src="<%= camisa.imagem_camisa %>" alt="">
+                            </a>
+                            <h1>
+                                <%= camisa.nome_time %>
+                            </h1>
+                            <h2>R$ <%= camisa.preco_avista %> no Pix <br> ou <%= camisa.parcela_vezes %>x de R$ <%=
+                                            camisa.parcela_preco %>
+                            </h2>
+                        </div>
+                        <% } %>
+                            <% }) %>
+            </div>
+        </section>
+        <section id="second">
+            <div class="title">
+                <h1>Camisas de Time Oficial</h1>
+            </div>
+            <div class="gallery">
+                <% camisas.forEach(camisa=> { %>
+                    <% if (camisa.tipo==='Camisa de Time' ) { %>
+                        <div class="photo">
+                            <a href="./camisa/<%= camisa.id %>">
+                                <img src="<%= camisa.imagem_camisa %>" alt="">
+                            </a>
+                            <h1>
+                                <%= camisa.nome_time %>
+                            </h1>
+                            <h2>R$ <%= camisa.preco_avista %> no Pix <br> ou <%= camisa.parcela_vezes %>x de R$
+                                        <%= camisa.parcela_preco %>
+                            </h2>
+                        </div>
+                        <% } %>
+                            <% }) %>
+            </div>
+        </section>
+
+        <section id="third">
+            <img src="/imgs/assets/AD.png" alt="">
+        </section>
+    </main>
+</body>
+
+</html>
